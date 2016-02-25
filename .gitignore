@@ -1,6 +1,9 @@
 # Mac
 .DS_Store
 
+# Project specific
+data/
+
 # History files
 .Rhistory
 .Rapp.history
