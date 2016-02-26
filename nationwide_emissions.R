@@ -12,7 +12,7 @@ if (!file.exists(result_folder)) {
 #source <- readRDS(source_data);
 pmdata <- readRDS(raw_data);
 by_the_year <- sapply(split(pmdata$Emissions, pmdata$year), mean)
-rm(pmda
+rm(pmdata)
 
 # plot it
 png(filename=result_file, width=480, height=480, units="px")
