@@ -8,17 +8,11 @@ if (!file.exists(result_folder)) {
      dir.create(result_folder);
 }
 
-# mean just the Emissions column and not ALL columns as apply alone likes to do
-mean_the_split <- function(pm25) {
-     spl <- split(pm25, pm25$year)
-     sapply(spl, function(x) mean(x$Emissions) )
-}
-
 # get and process the data from the files
 #source <- readRDS(source_data);
 pmdata <- readRDS(raw_data);
-by_the_year <- mean_the_split(pmdata)
-rm(pmdata)
+by_the_year <- sapply(split(pmdata$Emissions, pmdata$year), mean)
+rm(pmda
 
 # plot it
 png(filename=result_file, width=480, height=480, units="px")
