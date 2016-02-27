@@ -16,8 +16,6 @@ pmdata$year <- as.factor(pmdata$year)
 
 # plot it
 library(ggplot2)
-#png(filename=result_file, width=480, height=480, units="px")
 g <- ggplot(pmdata,aes(year,Emissions))
 g + geom_bar(stat="identity",aes(fill=type), position="dodge") + ggtitle("Baltimore, MD PM2.5 Emissions by Type")
 ggsave(result_file,units="in",dpi=72,width=6,height=5)
-#dev.off()
